@@ -53,9 +53,9 @@ class AnimateView extends StatefulWidget {
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   padding: const EdgeInsets.all(8.0),
-                  child: const Column(
+                  child:  Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+                    children: const [
                       Text(
                         "Instruksi",
                         style: TextStyle(

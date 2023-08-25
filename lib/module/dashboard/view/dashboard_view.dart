@@ -14,10 +14,10 @@ class DashboardView extends StatefulWidget {
         body: Container(
           width: MediaQuery.of(context).size.width,
           padding: const EdgeInsets.all(8.0),
-          child: const Column(
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: const [
               Text(
                 "Wajib di isi",
                 style: TextStyle(
