@@ -19,7 +19,7 @@ class CounterView extends StatefulWidget {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
-               Text(
+              Text(
                 "Counter: ${controller.counter}",
                 style: const TextStyle(
                   fontSize: 30.0,
@@ -33,6 +33,14 @@ class CounterView extends StatefulWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
+                    style: ButtonStyle(
+                      foregroundColor: MaterialStateProperty.all(
+                        Colors.green,
+                      ),
+                      textStyle: MaterialStateProperty.all(
+                        const TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold),
+                      ),
+                    ),
                     onPressed: () => controller.increment(),
                     child: const Text("Increment"),
                   ),
@@ -40,6 +48,14 @@ class CounterView extends StatefulWidget {
                     width: 12.0,
                   ),
                   ElevatedButton(
+                    style: ButtonStyle(
+                      foregroundColor: MaterialStateProperty.all(
+                        Colors.orange,
+                      ),
+                      textStyle: MaterialStateProperty.all(
+                        const TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold),
+                      ),
+                    ),
                     onPressed: () => controller.decrement(),
                     child: const Text("Decrement"),
                   ),
@@ -52,7 +68,7 @@ class CounterView extends StatefulWidget {
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   padding: const EdgeInsets.all(8.0),
-                  child:  Column(
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
                       Text(

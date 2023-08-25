@@ -22,39 +22,45 @@ class SingleSelectionView extends StatefulWidget {
               SizedBox(
                 height: 40.0,
                 child: ListView.builder(
-                  itemCount: 10,
+                  itemCount: controller.categories.length,
                   scrollDirection: Axis.horizontal,
                   padding: EdgeInsets.zero,
                   clipBehavior: Clip.none,
                   itemBuilder: (context, index) {
-                    return Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 16.0,
-                        vertical: 8.0,
-                      ),
-                      margin: const EdgeInsets.only(
-                        right: 12.0,
-                      ),
-                      decoration: const BoxDecoration(
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color(0x19000000),
-                            blurRadius: 24,
-                            offset: Offset(0, 11),
-                          ),
-                        ],
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(
-                            8.0,
+                    String category = controller.categories[index];
+                    bool isSelected = index == controller.selectedIndex;
+                    return GestureDetector(
+                      onTap: () => controller.updateSelectedCategory(index),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 16.0,
+                          vertical: 8.0,
+                        ),
+                        margin: const EdgeInsets.only(
+                          right: 12.0,
+                        ),
+                        decoration:  BoxDecoration(
+                          color: isSelected ? Colors.black : Colors.white,
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Color(0x19000000),
+                              blurRadius: 24,
+                              offset: Offset(0, 11),
+                            ),
+                          ],
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(
+                              8.0,
+                            ),
                           ),
                         ),
-                      ),
-                      child: const Center(
-                        child: Text(
-                          "Category 1",
-                          style: TextStyle(
-                            fontSize: 14.0,
+                        child: Center(
+                          child: Text(
+                            category,
+                            style:  TextStyle(
+                              fontSize: 14.0,
+                              color: isSelected ? Colors.white : Colors.black
+                            ),
                           ),
                         ),
                       ),

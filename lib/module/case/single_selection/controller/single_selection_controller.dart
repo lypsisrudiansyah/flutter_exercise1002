@@ -5,6 +5,18 @@ import '../view/single_selection_view.dart';
 class SingleSelectionController extends State<SingleSelectionView> {
   static late SingleSelectionController instance;
   late SingleSelectionView view;
+  int? selectedIndex;
+  List<String> categories = [
+    "Apple",
+    "Banana",
+    "Cherry",
+    "Durian",
+    "Elderberry",
+    "Fig",
+    "Grape",
+    "Honeydew",
+  ];
+
 
   @override
   void initState() {
@@ -17,4 +29,9 @@ class SingleSelectionController extends State<SingleSelectionView> {
 
   @override
   Widget build(BuildContext context) => widget.build(context, this);
+
+  updateSelectedCategory(int index) {
+    selectedIndex = index;
+    setState(() {});
+  }
 }
