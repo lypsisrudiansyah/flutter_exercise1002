@@ -5,6 +5,7 @@ import '../view/counter_view.dart';
 class CounterController extends State<CounterView> {
   static late CounterController instance;
   late CounterView view;
+  int counter = 0;
 
   @override
   void initState() {
@@ -17,4 +18,15 @@ class CounterController extends State<CounterView> {
 
   @override
   Widget build(BuildContext context) => widget.build(context, this);
+  
+  void increment() {
+    counter++;
+    setState(() {});
+  }
+
+  void decrement() {
+    counter--;
+    setState(() {});
+  }
+  
 }
