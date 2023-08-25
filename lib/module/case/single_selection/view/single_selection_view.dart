@@ -30,7 +30,7 @@ class SingleSelectionView extends StatefulWidget {
                     String category = controller.categories[index];
                     bool isSelected = index == controller.selectedIndex;
                     return GestureDetector(
-                      onTap: () => controller.updateSelectedCategory(index),
+                      onTap: () => controller.updateSelectedIndex(index),
                       child: Container(
                         padding: const EdgeInsets.symmetric(
                           horizontal: 16.0,

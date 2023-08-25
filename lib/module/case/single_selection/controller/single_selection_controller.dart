@@ -30,7 +30,7 @@ class SingleSelectionController extends State<SingleSelectionView> {
   @override
   Widget build(BuildContext context) => widget.build(context, this);
 
-  updateSelectedCategory(int index) {
+  updateSelectedIndex(int index) {
     selectedIndex = index;
     setState(() {});
   }
