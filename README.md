@@ -1,6 +1,6 @@
 # Flutter - State Management Exercise 2
 
-<img src="https://github.com/lypsisrudiansyah/flutter_exercise1002/assets/52348378/871c5b8c-1609-46b3-a663-1426cbacb614" height="500">
+<img src="https://github.com/lypsisrudiansyah/flutter_exercise1002/assets/52348378/56ac7eb1-2aae-47f9-ba7c-856215032667" height="500">
 
 ## Module
 
