@@ -23,10 +23,10 @@ class DisabledButtonView extends StatefulWidget {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.green,
                 ),
-                onPressed: () {},
-                child: const Text(
-                  "Save",
-                  style: TextStyle(
+                onPressed: controller.enabled ? () {} : null,
+                child: Text(
+                  controller.enabled ? "The Button is Enabled" : "The Button is Disabled",
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
@@ -39,14 +39,14 @@ class DisabledButtonView extends StatefulWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () => controller.enableButton(),
                     child: const Text("Enable Button"),
                   ),
                   const SizedBox(
                     width: 12.0,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () => controller.disableButton(),
                     child: const Text("Disable Button"),
                   ),
                 ],
@@ -58,7 +58,7 @@ class DisabledButtonView extends StatefulWidget {
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   padding: const EdgeInsets.all(8.0),
-                  child:  Column(
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
                       Text(

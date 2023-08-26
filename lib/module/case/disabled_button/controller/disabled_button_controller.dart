@@ -5,6 +5,7 @@ import '../view/disabled_button_view.dart';
 class DisabledButtonController extends State<DisabledButtonView> {
   static late DisabledButtonController instance;
   late DisabledButtonView view;
+  bool enabled = false;
 
   @override
   void initState() {
@@ -17,4 +18,15 @@ class DisabledButtonController extends State<DisabledButtonView> {
 
   @override
   Widget build(BuildContext context) => widget.build(context, this);
+
+  void enableButton() {
+    enabled = true;
+    setState(() {});
+  }
+
+  void disableButton() {
+    enabled = false;
+    setState(() {});
+  }
+  
 }
