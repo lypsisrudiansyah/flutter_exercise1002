@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:state_management_exercises/core.dart';
 import '../controller/timer_controller.dart';
 
@@ -19,9 +20,9 @@ class TimerView extends StatefulWidget {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
-              const Text(
-                "20:30",
-                style: TextStyle(
+               Text(
+                DateFormat('ms').format(controller.date),
+                style: const TextStyle(
                   fontSize: 30.0,
                   fontWeight: FontWeight.bold,
                 ),
@@ -33,14 +34,14 @@ class TimerView extends StatefulWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () => controller.startTimer(),
                     child: const Text("Start"),
                   ),
                   const SizedBox(
                     width: 12.0,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () => controller.stopTimer(),
                     child: const Text("Stop"),
                   ),
                 ],
