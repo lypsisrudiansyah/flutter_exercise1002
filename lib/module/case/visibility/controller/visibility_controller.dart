@@ -5,6 +5,7 @@ import '../view/visibility_view.dart';
 class VisibilityController extends State<VisibilityView> {
   static late VisibilityController instance;
   late VisibilityView view;
+  bool visible = false;
 
   @override
   void initState() {
@@ -17,4 +18,14 @@ class VisibilityController extends State<VisibilityView> {
 
   @override
   Widget build(BuildContext context) => widget.build(context, this);
+
+  void showBanner() {
+    visible = true;
+    setState(() {});
+  }
+
+  void hideBanner() {
+    visible = false;
+    setState(() {});
+  }
 }

@@ -20,7 +20,7 @@ class VisibilityView extends StatefulWidget {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
-              Container(
+              controller.visible ? Container(
                 height: 160.0,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
@@ -79,7 +79,7 @@ class VisibilityView extends StatefulWidget {
                     ),
                   ],
                 ),
-              ),
+              ) : const SizedBox(),
               const SizedBox(
                 height: 20.0,
               ),
@@ -87,14 +87,14 @@ class VisibilityView extends StatefulWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () => controller.showBanner(),
                     child: const Text("Show"),
                   ),
                   const SizedBox(
                     width: 12.0,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () => controller.hideBanner(),
                     child: const Text("Hide"),
                   ),
                 ],

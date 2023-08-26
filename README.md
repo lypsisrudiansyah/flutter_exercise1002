@@ -31,3 +31,6 @@
     </td>
  </tr>
 </table>
+
+---
+### Current Point = 18
