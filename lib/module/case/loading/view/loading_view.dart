@@ -19,7 +19,7 @@ class LoadingView extends StatefulWidget {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
-              const CircularProgressIndicator(),
+              controller.loading ? const CircularProgressIndicator() : const SizedBox(),
               const SizedBox(
                 height: 20.0,
               ),
@@ -27,14 +27,14 @@ class LoadingView extends StatefulWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () => controller.showLoading(),
                     child: const Text("Show loading"),
                   ),
                   const SizedBox(
                     width: 12.0,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () => controller.hideLoading(),
                     child: const Text("Hide loading"),
                   ),
                 ],
@@ -46,7 +46,7 @@ class LoadingView extends StatefulWidget {
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   padding: const EdgeInsets.all(8.0),
-                  child:  Column(
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
                       Text(

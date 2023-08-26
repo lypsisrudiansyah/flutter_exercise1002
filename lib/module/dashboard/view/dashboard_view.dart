@@ -89,7 +89,7 @@ class DashboardView extends StatefulWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Icon(
-                            Icons.dashboard,
+                            item["icon"],
                             size: 24.0,
                             color: Colors.blueGrey[900]!,
                           ),

@@ -5,7 +5,7 @@ import '../view/multiple_selection_view.dart';
 class MultipleSelectionController extends State<MultipleSelectionView> {
   static late MultipleSelectionController instance;
   late MultipleSelectionView view;
-  List<int> selectedIndexes = [];
+  List selectedIndexes = [];
   List<String> categories = [
     "Apple",
     "Banana",

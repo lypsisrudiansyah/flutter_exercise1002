@@ -5,6 +5,7 @@ import '../view/loading_view.dart';
 class LoadingController extends State<LoadingView> {
   static late LoadingController instance;
   late LoadingView view;
+  bool loading = false;
 
   @override
   void initState() {
@@ -17,4 +18,14 @@ class LoadingController extends State<LoadingView> {
 
   @override
   Widget build(BuildContext context) => widget.build(context, this);
+
+  void showLoading() {
+    loading = true;
+    setState(() {});
+  }
+
+  void hideLoading() {
+    loading = false;
+    setState(() {});
+  }
 }
