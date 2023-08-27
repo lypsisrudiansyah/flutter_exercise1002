@@ -123,6 +123,7 @@ void main() async {
     },
     //---
   ];
+  String  lastDoneRequirement = '';
 
   for (var task in tasks) {
     var module = task["module"];
@@ -134,11 +135,13 @@ void main() async {
     for (var req in requirements) {
       if (content.contains(req)) {
         point++;
+        lastDoneRequirement = req + " in $module";
       }
     }
   }
 
   print("POINT: $point");
+  print("lastDoneRequirement Tasks : $lastDoneRequirement");
 
   await Dio().post(
     "https://capekngoding.com/magicbook/api/scores",

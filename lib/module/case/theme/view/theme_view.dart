@@ -9,7 +9,7 @@ class ThemeView extends StatefulWidget {
     controller.view = this;
 
     return Theme(
-      data: ThemeData.dark(),
+      data: controller.theTheme,
       child: Scaffold(
         appBar: AppBar(
           title: Text(toString()),
@@ -131,15 +131,15 @@ class ThemeView extends StatefulWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ElevatedButton(
-                      onPressed: () {},
-                      child: const Text("Dark"),
+                      onPressed: () => controller.enableDarkTheme(),
+                      child: const Text("Set To Dark Theme"),
                     ),
                     const SizedBox(
                       width: 12.0,
                     ),
                     ElevatedButton(
-                      onPressed: () {},
-                      child: const Text("Light"),
+                      onPressed: () => controller.enableLightTheme(),
+                      child: const Text("Set To Light Theme"),
                     ),
                   ],
                 ),
