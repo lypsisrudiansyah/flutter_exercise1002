@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:state_management_exercises/core.dart';
-import '../controller/animate_controller.dart';
 
 class AnimateView extends StatefulWidget {
   const AnimateView({Key? key}) : super(key: key);
@@ -22,9 +21,9 @@ class AnimateView extends StatefulWidget {
               AnimatedContainer(
                 duration: const Duration(milliseconds: 900),
                 height: 100,
-                width: 100,
-                decoration: const BoxDecoration(
-                  color: Colors.red,
+                width: controller.animated == false ? 100 : Get.width,
+                decoration:  BoxDecoration(
+                  color: controller.animated == false ? Colors.red : Colors.blue,
                 ),
               ),
               const SizedBox(
@@ -34,14 +33,14 @@ class AnimateView extends StatefulWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () => controller.doAnimation(),
                     child: const Text("Start"),
                   ),
                   const SizedBox(
                     width: 12.0,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () => controller.resetAnimation(),
                     child: const Text("Stop"),
                   ),
                 ],
@@ -53,7 +52,7 @@ class AnimateView extends StatefulWidget {
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   padding: const EdgeInsets.all(8.0),
-                  child:  Column(
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
                       Text(

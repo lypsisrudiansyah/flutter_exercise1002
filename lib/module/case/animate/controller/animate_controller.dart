@@ -5,6 +5,7 @@ import '../view/animate_view.dart';
 class AnimateController extends State<AnimateView> {
   static late AnimateController instance;
   late AnimateView view;
+  bool animated = false;
 
   @override
   void initState() {
@@ -17,4 +18,15 @@ class AnimateController extends State<AnimateView> {
 
   @override
   Widget build(BuildContext context) => widget.build(context, this);
+
+  void doAnimation() {
+    animated = true;
+    setState(() {});
+  }
+
+  void resetAnimation() {
+    animated = false;
+    setState(() {});
+  }
+  
 }
