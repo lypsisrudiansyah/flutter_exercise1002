@@ -20,20 +20,22 @@ class HttpRequestView extends StatefulWidget {
           child: Column(
             children: [
               ListView.builder(
-                itemCount: 3,
+                itemCount: controller.users.length,
                 shrinkWrap: true,
                 physics: const ScrollPhysics(),
                 itemBuilder: (BuildContext context, int index) {
-                  return Card(
+                  var itemUser = controller.users[index];
+                 
+                    return Card(
                     child: ListTile(
                       leading: CircleAvatar(
                         backgroundColor: Colors.grey[200],
-                        backgroundImage: const NetworkImage(
-                          "https://i.ibb.co/QrTHd59/woman.jpg",
+                        backgroundImage:  NetworkImage(
+                          itemUser['avatar'],
                         ),
                       ),
-                      title: const Text("Jessica Doe"),
-                      subtitle: const Text("Programmer"),
+                      title:  Text(itemUser["first_name"] + " " + itemUser["last_name"]),
+                      subtitle:  Text(itemUser['email']),
                     ),
                   );
                 },
@@ -45,14 +47,14 @@ class HttpRequestView extends StatefulWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () => controller.getUsers(),
                     child: const Text("Get Users"),
                   ),
                   const SizedBox(
                     width: 12.0,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () => controller.reset(),
                     child: const Text("Reset"),
                   ),
                 ],

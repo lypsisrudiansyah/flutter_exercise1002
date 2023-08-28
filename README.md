@@ -60,4 +60,4 @@
 </table>
 
 ---
-### Current Point = 28
+### Current Point = 42

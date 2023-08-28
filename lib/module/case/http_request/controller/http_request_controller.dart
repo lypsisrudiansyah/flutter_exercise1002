@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:dio/dio.dart';
 import 'package:state_management_exercises/core.dart';
 import '../view/http_request_view.dart';
 
 class HttpRequestController extends State<HttpRequestView> {
   static late HttpRequestController instance;
   late HttpRequestView view;
+  List users = [];
 
   @override
   void initState() {
@@ -17,4 +19,28 @@ class HttpRequestController extends State<HttpRequestView> {
 
   @override
   Widget build(BuildContext context) => widget.build(context, this);
+
+  void getUsers() async {
+    var response = await Dio().get(
+      "https://reqres.in/api/users",
+      options: Options(
+        headers: {
+          "Content-Type": "application/json",
+        },
+      ),
+    );
+    // Map obj = response.data;
+    setState(() {
+      
+    users = response.data["data"];
+    });
+  }
+
+  void reset() {
+    // users = [];
+    users.clear();
+    setState(() {
+      
+    });
+  }
 }
