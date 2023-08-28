@@ -2,7 +2,6 @@
 
 <img src="https://github.com/lypsisrudiansyah/flutter_exercise1002/assets/52348378/56ac7eb1-2aae-47f9-ba7c-856215032667" height="500">
 
-
 ## Module
 
 <table border="0" width="100%">
@@ -47,17 +46,31 @@
 <!-- ROW -->
  <tr>
     <td width="50%"><b style="font-size:30px">7. Timer App ✅</b></td>
-    <td width="50%"><b style="font-size:30px">TODO : Animate</b></td>
+    <td width="50%"><b style="font-size:30px">8. Animate ✅</b></td>
  </tr>
  <tr>
     <td>
-<img src="https://github.com/lypsisrudiansyah/flutter_exercise1002/assets/52348378/d336b656-08e9-47b2-9d91-e0b758394e37" height="500">
+     <img src="https://github.com/lypsisrudiansyah/flutter_exercise1002/assets/52348378/d336b656-08e9-47b2-9d91-e0b758394e37" height="500">
     </td>
     <td>
-...
+     <img src="https://github.com/lypsisrudiansyah/flutter_exercise1002/assets/52348378/c84d0a78-d740-436f-ad93-8d4e61afc2ec" height="500">
+    </td>
+ </tr>
+ <!-- ROW -->
+ <tr>
+    <td width="50%"><b style="font-size:30px">9. Switch Theme App ✅</b></td>
+    <td width="50%"><b style="font-size:30px">10. Http Request(Todo)</b></td>
+ </tr>
+ <tr>
+    <td>
+     <img src="https://github.com/lypsisrudiansyah/flutter_exercise1002/assets/52348378/378b2a64-75cb-45ef-8f73-613bbdcb5024" height="500">
+    </td>
+    <td>
+     ...
     </td>
  </tr>
 </table>
 
 ---
+
 ### Current Point = 42
