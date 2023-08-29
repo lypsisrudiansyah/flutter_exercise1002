@@ -5,6 +5,8 @@ import '../view/game_view.dart';
 class GameController extends State<GameView> {
   static late GameController instance;
   late GameView view;
+  int turns = 1;
+  List values = ["", "", "", "", "", "", "", "", ""];
 
   @override
   void initState() {
@@ -17,4 +19,19 @@ class GameController extends State<GameView> {
 
   @override
   Widget build(BuildContext context) => widget.build(context, this);
+
+  void updateBoard(int newIndex) {
+    if(turns == 9) return;
+    if (newIndex % 2 == 0) {
+      values[newIndex] = "X";
+    } else {
+      values[newIndex] = "O";
+    }
+    turns++;
+  }
+
+  void resetBoard() {
+    turns = 1;
+    List values = ["", "", "", "", "", "", "", "", ""];
+  }
 }

@@ -124,6 +124,7 @@ void main() async {
     //---
   ];
   String  lastDoneRequirement = '';
+  List<String> notCorrects = [];
 
   for (var task in tasks) {
     var module = task["module"];
@@ -136,12 +137,15 @@ void main() async {
       if (content.contains(req)) {
         point++;
         lastDoneRequirement = req + " in $module";
+      } else {
+        notCorrects.add(req + " in $module");
       }
     }
   }
 
   print("POINT: $point");
   print("lastDoneRequirement Tasks : $lastDoneRequirement");
+  print("notCorrects Tasks : $notCorrects");
 
   await Dio().post(
     "https://capekngoding.com/magicbook/api/scores",
