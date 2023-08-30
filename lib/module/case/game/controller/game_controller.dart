@@ -21,17 +21,19 @@ class GameController extends State<GameView> {
   Widget build(BuildContext context) => widget.build(context, this);
 
   void updateBoard(int newIndex) {
-    if(turns == 9) return;
+    if (turns == 9) return;
     if (newIndex % 2 == 0) {
       values[newIndex] = "X";
     } else {
       values[newIndex] = "O";
     }
     turns++;
+    setState(() {});
   }
 
   void resetBoard() {
     turns = 1;
     List values = ["", "", "", "", "", "", "", "", ""];
+    setState(() {});
   }
 }

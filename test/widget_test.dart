@@ -118,7 +118,7 @@ void main() async {
         "values[newIndex] = \"X\"",
         "values[newIndex] = \"O\"",
         "turns++",
-        "if(turns == 9) return;",
+        "if (turns == 9) return;",
       ],
     },
     //---
