@@ -8,6 +8,8 @@ class GameView extends StatefulWidget {
   Widget build(context, GameController controller) {
     controller.view = this;
 
+    print("GameView build");
+
     return Scaffold(
       appBar: AppBar(
         title: Text(toString()),
@@ -27,17 +29,22 @@ class GameView extends StatefulWidget {
                   mainAxisSpacing: 6,
                   crossAxisSpacing: 6,
                 ),
-                itemCount: 9,
+                itemCount: controller.values.length,
                 shrinkWrap: true,
                 physics: const ScrollPhysics(),
                 itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    color: Colors.orange,
-                    child: const FittedBox(
-                      child: Text(
-                        "",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
+                  return InkWell(
+                    onTap: () {
+                      controller.updateBoard(index);
+                    },
+                    child: Container(
+                      color: Colors.orange,
+                      child: FittedBox(
+                        child: Text(
+                          controller.values[index],
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ),
@@ -48,7 +55,7 @@ class GameView extends StatefulWidget {
                 height: 20.0,
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () => controller.resetBoard(),
                 child: const Text("Reset"),
               ),
               const SizedBox(
@@ -58,7 +65,7 @@ class GameView extends StatefulWidget {
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   padding: const EdgeInsets.all(8.0),
-                  child:  Column(
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
                       Text(
