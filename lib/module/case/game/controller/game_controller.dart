@@ -22,7 +22,7 @@ class GameController extends State<GameView> {
 
   void updateBoard(int newIndex) {
     if (turns == 9) return;
-    if (newIndex % 2 == 0) {
+    if (turns % 2 == 0) {
       values[newIndex] = "X";
     } else {
       values[newIndex] = "O";
@@ -32,8 +32,10 @@ class GameController extends State<GameView> {
   }
 
   void resetBoard() {
+    setState(() {
+
     turns = 1;
-    List values = ["", "", "", "", "", "", "", "", ""];
-    setState(() {});
+    values = ["", "", "", "", "", "", "", "", ""];
+    });
   }
 }
