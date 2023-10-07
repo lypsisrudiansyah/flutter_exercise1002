@@ -19,27 +19,31 @@ class HttpRequestView extends StatefulWidget {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
-              ListView.builder(
-                itemCount: controller.users.length,
-                shrinkWrap: true,
-                physics: const ScrollPhysics(),
-                itemBuilder: (BuildContext context, int index) {
-                  var itemUser = controller.users[index];
-                 
-                    return Card(
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        backgroundColor: Colors.grey[200],
-                        backgroundImage:  NetworkImage(
-                          itemUser['avatar'],
-                        ),
-                      ),
-                      title:  Text(itemUser["first_name"] + " " + itemUser["last_name"]),
-                      subtitle:  Text(itemUser['email']),
+              controller.isLoading
+                  ? const Center(
+                      child: CircularProgressIndicator(),
+                    )
+                  : ListView.builder(
+                      itemCount: controller.users.length,
+                      shrinkWrap: true,
+                      physics: const ScrollPhysics(),
+                      itemBuilder: (BuildContext context, int index) {
+                        var itemUser = controller.users[index];
+
+                        return Card(
+                          child: ListTile(
+                            leading: CircleAvatar(
+                              backgroundColor: Colors.grey[200],
+                              backgroundImage: NetworkImage(
+                                itemUser['avatar'],
+                              ),
+                            ),
+                            title: Text(itemUser["first_name"] + " " + itemUser["last_name"]),
+                            subtitle: Text(itemUser['email']),
+                          ),
+                        );
+                      },
                     ),
-                  );
-                },
-              ),
               const SizedBox(
                 height: 20.0,
               ),
@@ -66,7 +70,7 @@ class HttpRequestView extends StatefulWidget {
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   padding: const EdgeInsets.all(8.0),
-                  child:  Column(
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
                       Text(

@@ -7,6 +7,7 @@ class HttpRequestController extends State<HttpRequestView> {
   static late HttpRequestController instance;
   late HttpRequestView view;
   List users = [];
+  bool isLoading = false;
 
   @override
   void initState() {
@@ -21,6 +22,9 @@ class HttpRequestController extends State<HttpRequestView> {
   Widget build(BuildContext context) => widget.build(context, this);
 
   void getUsers() async {
+    setState(() {
+      isLoading = true;
+    });
     var response = await Dio().get(
       "https://reqres.in/api/users",
       options: Options(
@@ -30,17 +34,19 @@ class HttpRequestController extends State<HttpRequestView> {
       ),
     );
     // Map obj = response.data;
+    // waiting 3 second
+    await Future.delayed(const Duration(seconds: 2), () {
+      print("waiting 3 second");
+    });
     setState(() {
-      
-    users = response.data["data"];
+      isLoading = false;
+      users = response.data["data"];
     });
   }
 
   void reset() {
     // users = [];
     users.clear();
-    setState(() {
-      
-    });
+    setState(() {});
   }
 }
