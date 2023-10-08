@@ -35,7 +35,7 @@ class HttpRequestController extends State<HttpRequestView> {
     );
     // Map obj = response.data;
     // waiting 3 second
-    await Future.delayed(const Duration(seconds: 2), () {
+    await Future.delayed(const Duration(milliseconds: 500), () {
       print("waiting 3 second");
     });
     setState(() {
