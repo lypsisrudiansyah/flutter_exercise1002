@@ -66,7 +66,7 @@
      <img src="https://github.com/lypsisrudiansyah/flutter_exercise1002/assets/52348378/378b2a64-75cb-45ef-8f73-613bbdcb5024" height="500">
     </td>
     <td>
-     ...
+    <video src="https://github.com/lypsisrudiansyah/flutter_exercise1002/assets/52348378/db1c4963-69d3-4005-b5b2-19ba9f316c7b" height="500" controls></video> 
     </td>
  </tr>
 </table>
