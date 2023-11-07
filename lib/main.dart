@@ -24,24 +24,26 @@ class MyApp extends StatelessWidget {
     ];
     colors.shuffle();
     return MaterialApp(
-      title: 'Flutter Demo',
-      navigatorKey: Get.navigatorKey,
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey[900]!),
-        useMaterial3: true,
-        appBarTheme: AppBarTheme(
-          backgroundColor: colors.first,
-          titleTextStyle: const TextStyle(
-            color: Colors.white,
-            fontSize: 18.0,
-          ),
-          iconTheme: const IconThemeData(
-            color: Colors.white,
+        title: 'Flutter Demo',
+        navigatorKey: Get.navigatorKey,
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey[900]!),
+          useMaterial3: true,
+          appBarTheme: AppBarTheme(
+            backgroundColor: colors.first,
+            titleTextStyle: const TextStyle(
+              color: Colors.white,
+              fontSize: 18.0,
+            ),
+            iconTheme: const IconThemeData(
+              color: Colors.white,
+            ),
           ),
         ),
-      ),
-      home: const DashboardView(),
-    );
+        // home: const ExampleLayout(),
+        // home: const OverflowHandlingPage());
+      home: const DashboardView());
+
   }
 }
