@@ -26,7 +26,7 @@
     </tr>
     <tr>
         <td>
-            <img src="https://github.com/lypsisrudiansyah/flutter_exercise1002/assets/52348378/a0bd5ed7-ad64-4523-8b94-7f4091e5ba4a"
+            <img src="https://github.com/lypsisrudiansyah/flutter_exercise1002/assets/52348378/8b3b4e1f-cfe4-4193-a527-69a603299ef7"
                 height="700">
         </td>
         <td>
